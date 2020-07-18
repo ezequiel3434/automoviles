@@ -13,6 +13,7 @@
 		185786661E315BD90090A82A /* automoviles.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185786641E315BD90090A82A /* automoviles.xcdatamodeld */; };
 		185786681E315BD90090A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185786671E315BD90090A82A /* Assets.xcassets */; };
 		1857866B1E315BD90090A82A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185786691E315BD90090A82A /* LaunchScreen.storyboard */; };
+		3734CAF324C2C1C00058F2F6 /* ListaDatosIniciales.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3734CAF224C2C1C00058F2F6 /* ListaDatosIniciales.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		185786671E315BD90090A82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1857866A1E315BD90090A82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1857866C1E315BD90090A82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3734CAF224C2C1C00058F2F6 /* ListaDatosIniciales.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ListaDatosIniciales.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				185786691E315BD90090A82A /* LaunchScreen.storyboard */,
 				1857866C1E315BD90090A82A /* Info.plist */,
 				185786641E315BD90090A82A /* automoviles.xcdatamodeld */,
+				3734CAF224C2C1C00058F2F6 /* ListaDatosIniciales.plist */,
 			);
 			path = automoviles;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3734CAF324C2C1C00058F2F6 /* ListaDatosIniciales.plist in Resources */,
 				1857866B1E315BD90090A82A /* LaunchScreen.storyboard in Resources */,
 				185786681E315BD90090A82A /* Assets.xcassets in Resources */,
 				185786631E315BD90090A82A /* Main.storyboard in Resources */,
@@ -281,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8PF4PD98CF;
 				INFOPLIST_FILE = automoviles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -297,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8PF4PD98CF;
 				INFOPLIST_FILE = automoviles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
