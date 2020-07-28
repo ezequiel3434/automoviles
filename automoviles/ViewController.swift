@@ -30,6 +30,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guardarDatosPlistEnCoreData()
+        
+        let peticion = NSFetchRequest<Automovil>(entityName: "Automovil")
+        let primerTitulo = marcasSegmentedControl.titleForSegment(at: 0)!
+        peticion.predicate = NSPredicate(format: "busqueda == %@", primerTitulo)
+        
+        do {
+            let resultados = try managedContext.fetch(peticion)
+            popularDatos(automovil: resultados.first!)
+            
+        } catch let error as NSError{
+            print("No pude recuperar datos \(error), \(error.userInfo)")
+        }
+        
+        
     }
     
     func guardarDatosPlistEnCoreData() {
@@ -71,6 +85,29 @@ class ViewController: UIViewController {
             
             try! managedContext.save()
         }
+    }
+    
+    
+    func popularDatos(automovil: Automovil) {
+        guard let datosImagen = automovil.datosImagen as? Data,
+            let ultimaPrueba = automovil.ultimaPrueba as? Date
+            else {
+                return
+        }
+        
+        // IBOutlets
+        
+        fotografiaAutomovil.image = UIImage(data: datosImagen)
+        
+        let formatoFecha = DateFormatter()
+        formatoFecha.dateStyle = .short
+        formatoFecha.timeStyle = .none
+        
+        ultimaPruebaLabel.text = "Ultima prueba: " + formatoFecha.string(from: ultimaPrueba)
+        
+        modeloLabel.text = automovil.nombre
+        calificacionLabel.text = "Calificacion: \(automovil.calificacion)"
+        numeroPruebasLabel.text = "Veces probado: \(automovil.vecesProbado)"
     }
 
     @IBAction func segmentedControl(_ sender: Any) {
