@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     var managedContext: NSManagedObjectContext!
     
+    var automovilActual: Automovil!
+    
     @IBOutlet weak var fotografiaAutomovil: UIImageView!
     
     
@@ -37,7 +39,8 @@ class ViewController: UIViewController {
         
         do {
             let resultados = try managedContext.fetch(peticion)
-            popularDatos(automovil: resultados.first!)
+            automovilActual = resultados.first!
+            popularDatos(automovil: automovilActual)
             
         } catch let error as NSError{
             print("No pude recuperar datos \(error), \(error.userInfo)")
@@ -111,6 +114,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func segmentedControl(_ sender: Any) {
+        guard let selectorAutomovil = sender as? UISegmentedControl else {
+            return
+        }
+        let automovilSeleccionado = selectorAutomovil.titleForSegment(at: selectorAutomovil.selectedSegmentIndex)
+        let peticion = NSFetchRequest<Automovil>(entityName: "Automovil")
+        peticion.predicate = NSPredicate(format: "busqueda == %@", automovilSeleccionado!)
+        
+        do {
+            let resultado = try managedContext.fetch(peticion)
+            automovilActual = resultado.first!
+            
+            popularDatos(automovil: automovilActual)
+            
+            
+            
+        } catch let error as NSError {
+            print("No se pudo recuperar info por : \(error), \(error.userInfo)")
+        }
+        
+        
     }
    
     @IBAction func probar(_ sender: Any) {
