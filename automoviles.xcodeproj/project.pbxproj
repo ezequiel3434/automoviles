@@ -16,6 +16,7 @@
 		3734CAF324C2C1C00058F2F6 /* ListaDatosIniciales.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3734CAF224C2C1C00058F2F6 /* ListaDatosIniciales.plist */; };
 		3734CAF624C2C8200058F2F6 /* Automovil+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734CAF424C2C8200058F2F6 /* Automovil+CoreDataClass.swift */; };
 		3734CAF724C2C8200058F2F6 /* Automovil+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734CAF524C2C8200058F2F6 /* Automovil+CoreDataProperties.swift */; };
+		376DE2EB24D1AA830040E850 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 376DE2EA24D1AA830040E850 /* images */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3734CAF224C2C1C00058F2F6 /* ListaDatosIniciales.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ListaDatosIniciales.plist; sourceTree = "<group>"; };
 		3734CAF424C2C8200058F2F6 /* Automovil+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Automovil+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3734CAF524C2C8200058F2F6 /* Automovil+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Automovil+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		376DE2EA24D1AA830040E850 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 				3734CAF524C2C8200058F2F6 /* Automovil+CoreDataProperties.swift */,
 				1857865C1E315BD90090A82A /* automoviles */,
 				1857865B1E315BD90090A82A /* Products */,
+				376DE2EA24D1AA830040E850 /* images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376DE2EB24D1AA830040E850 /* images in Resources */,
 				3734CAF324C2C1C00058F2F6 /* ListaDatosIniciales.plist in Resources */,
 				1857866B1E315BD90090A82A /* LaunchScreen.storyboard in Resources */,
 				185786681E315BD90090A82A /* Assets.xcassets in Resources */,
