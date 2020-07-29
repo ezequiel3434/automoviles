@@ -137,9 +137,61 @@ class ViewController: UIViewController {
     }
    
     @IBAction func probar(_ sender: Any) {
+        
+        
+        automovilActual.vecesProbado += 1
+        
+        automovilActual.ultimaPrueba = NSDate() as Date
+        
+        do {
+            try managedContext.save()
+            popularDatos(automovil: automovilActual)
+        } catch let error as NSError {
+            print("No se pudo guardar datos nuevo: \(error)")
+        }
+        
     }
 
     @IBAction func calificar(_ sender: Any) {
+        let alerta = UIAlertController(title: "Calificación", message: "Califica el Automovil", preferredStyle: .alert)
+        
+        alerta.addTextField { (campoTexto) in
+            campoTexto.keyboardType = .decimalPad
+        }
+        
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        
+        let guardar = UIAlertAction(title: "Save", style: .default) { [unowned self]action in
+            guard let campoTexto = alerta.textFields?.first
+                else {
+                    return
+            }
+            guard let stringCalificacion = campoTexto.text, let calificacion = Double(stringCalificacion)
+                else {
+                    return
+            }
+            self.automovilActual.calificacion = calificacion
+            
+            do{
+                try self.managedContext.save()
+                self.popularDatos(automovil: self.automovilActual)
+                
+            }catch let error as NSError {
+                
+                 if error.domain == NSCocoaErrorDomain &&
+                                   (error.code == NSValidationNumberTooLargeError ||
+                                       error.code == NSValidationNumberTooSmallError) {
+                                   self.calificar(self.automovilActual)
+                               } else {
+                                   print("No se pudo guardar \(error), \(error.userInfo)")
+                }}
+            
+        }
+        alerta.addAction(cancelar)
+        alerta.addAction(guardar)
+        present(alerta, animated: true)
+        
+       
     }
 
 }
